@@ -1,13 +1,16 @@
 package model.cita;
 
+import model.producto.Servicio;
+
 public class DetalleCita {
     private int idDetalleCita;
     private String observaciones;
+    private Servicio servicio;
 
-
-    public DetalleCita(int idDetalleCita, String observaciones) {
+    public DetalleCita(int idDetalleCita, String observaciones, Servicio servicio) {
         this.idDetalleCita = idDetalleCita;
         this.observaciones = observaciones;
+        this.servicio = servicio;
     }
 
     // Getters y Setters
@@ -27,11 +30,20 @@ public class DetalleCita {
         this.observaciones = observaciones;
     }
 
+    public Servicio getServicio() {
+        return servicio;
+    }
+
+    public void setServicio(Servicio servicio) {
+        this.servicio = servicio;
+    }
+
     @Override
     public String toString() {
         return "DetalleCita{" +
                 "idDetalleCita=" + idDetalleCita +
                 ", observaciones='" + observaciones + '\'' +
+                ", servicio=" + servicio +
                 '}';
     }
 }

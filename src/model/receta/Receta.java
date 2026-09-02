@@ -1,19 +1,21 @@
 package model.receta;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class Receta {
     private int idReceta;
     private LocalDate fechaEmision;
     private String indicacionesGenerales;
     private boolean estado;
+    private List<DetalleReceta> detalles;
 
-
-    public Receta(int idReceta, LocalDate fechaEmision, String indicacionesGenerales, boolean estado) {
+    public Receta(int idReceta, LocalDate fechaEmision, String indicacionesGenerales, boolean estado, List<DetalleReceta> detalles) {
         this.idReceta = idReceta;
         this.fechaEmision = fechaEmision;
         this.indicacionesGenerales = indicacionesGenerales;
         this.estado = estado;
+        this.detalles = detalles;
     }
 
     // Getters y Setters
@@ -49,6 +51,14 @@ public class Receta {
         this.estado = estado;
     }
 
+    public List<DetalleReceta> getDetalles() {
+        return detalles;
+    }
+
+    public void setDetalles(List<DetalleReceta> detalles) {
+        this.detalles = detalles;
+    }
+
     @Override
     public String toString() {
         return "Receta{" +
@@ -56,6 +66,7 @@ public class Receta {
                 ", fechaEmision=" + fechaEmision +
                 ", indicacionesGenerales='" + indicacionesGenerales + '\'' +
                 ", estado=" + estado +
+                ", detalles=" + detalles +
                 '}';
     }
 }

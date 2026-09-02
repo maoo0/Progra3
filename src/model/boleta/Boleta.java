@@ -1,19 +1,21 @@
 package model.boleta;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class Boleta {
     private int idVenta;
     private LocalDate fecha;
     private double total;
     private MetodoPago metodoPago;
+    private List<DetalleBoleta> detalles;
 
-
-    public Boleta(int idVenta, LocalDate fecha, double total, MetodoPago metodoPago) {
+    public Boleta(int idVenta, LocalDate fecha, double total, MetodoPago metodoPago, List<DetalleBoleta> detalles) {
         this.idVenta = idVenta;
         this.fecha = fecha;
         this.total = total;
         this.metodoPago = metodoPago;
+        this.detalles = detalles;
     }
 
     // Getters y Setters
@@ -49,6 +51,14 @@ public class Boleta {
         this.metodoPago = metodoPago;
     }
 
+    public List<DetalleBoleta> getDetalles() {
+        return detalles;
+    }
+
+    public void setDetalles(List<DetalleBoleta> detalles) {
+        this.detalles = detalles;
+    }
+
     @Override
     public String toString() {
         return "Boleta{" +
@@ -56,6 +66,7 @@ public class Boleta {
                 ", fecha=" + fecha +
                 ", total=" + total +
                 ", metodoPago=" + metodoPago +
+                ", detalles=" + detalles +
                 '}';
     }
 }

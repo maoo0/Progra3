@@ -1,6 +1,9 @@
 package model.mascota;
 
+import model.atencion.AtencionMedica;
+
 import java.time.LocalDate;
+import java.util.List;
 
 public class Mascota {
     private int idMascota;
@@ -10,9 +13,9 @@ public class Mascota {
     private LocalDate fechaNacimiento;
     private String especie;
     private String raza;
+    private List<AtencionMedica> atencionesMedicas;
 
-
-    public Mascota(int idMascota, String nombre, char sexo, double peso, LocalDate fechaNacimiento, String especie, String raza) {
+    public Mascota(int idMascota, String nombre, char sexo, double peso, LocalDate fechaNacimiento, String especie, String raza, List<AtencionMedica> atencionesMedicas) {
         this.idMascota = idMascota;
         this.nombre = nombre;
         this.sexo = sexo;
@@ -20,6 +23,7 @@ public class Mascota {
         this.fechaNacimiento = fechaNacimiento;
         this.especie = especie;
         this.raza = raza;
+        this.atencionesMedicas = atencionesMedicas;
     }
 
     // Getters y Setters
@@ -79,6 +83,14 @@ public class Mascota {
         this.raza = raza;
     }
 
+    public List<AtencionMedica> getAtencionesMedicas() {
+        return atencionesMedicas;
+    }
+
+    public void setAtencionesMedicas(List<AtencionMedica> atencionesMedicas) {
+        this.atencionesMedicas = atencionesMedicas;
+    }
+
     @Override
     public String toString() {
         return "Mascota{" +
@@ -89,6 +101,7 @@ public class Mascota {
                 ", fechaNacimiento=" + fechaNacimiento +
                 ", especie='" + especie + '\'' +
                 ", raza='" + raza + '\'' +
+                ", atencionesMedicas=" + atencionesMedicas +
                 '}';
     }
 }

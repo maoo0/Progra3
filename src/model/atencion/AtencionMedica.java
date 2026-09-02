@@ -1,6 +1,7 @@
 package model.atencion;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class AtencionMedica {
     private int idAtencion;
@@ -8,14 +9,17 @@ public class AtencionMedica {
     private String motivoConsulta;
     private double pesoFisico;
     private String observaciones;
+    private List<AtencionTratamiento> tratamientos;
+    private List<AtencionDiagnostico> diagnosticos;
 
-
-    public AtencionMedica(int idAtencion, LocalDateTime fechaHora, String motivoConsulta, double pesoFisico, String observaciones) {
+    public AtencionMedica(int idAtencion, LocalDateTime fechaHora, String motivoConsulta, double pesoFisico, String observaciones, List<AtencionTratamiento> tratamientos, List<AtencionDiagnostico> diagnosticos) {
         this.idAtencion = idAtencion;
         this.fechaHora = fechaHora;
         this.motivoConsulta = motivoConsulta;
         this.pesoFisico = pesoFisico;
         this.observaciones = observaciones;
+        this.tratamientos = tratamientos;
+        this.diagnosticos = diagnosticos;
     }
 
     // Getters y Setters
@@ -59,6 +63,22 @@ public class AtencionMedica {
         this.observaciones = observaciones;
     }
 
+    public List<AtencionTratamiento> getTratamientos() {
+        return tratamientos;
+    }
+
+    public void setTratamientos(List<AtencionTratamiento> tratamientos) {
+        this.tratamientos = tratamientos;
+    }
+
+    public List<AtencionDiagnostico> getDiagnosticos() {
+        return diagnosticos;
+    }
+
+    public void setDiagnosticos(List<AtencionDiagnostico> diagnosticos) {
+        this.diagnosticos = diagnosticos;
+    }
+
     @Override
     public String toString() {
         return "AtencionMedica{" +
@@ -67,6 +87,8 @@ public class AtencionMedica {
                 ", motivoConsulta='" + motivoConsulta + '\'' +
                 ", pesoFisico=" + pesoFisico +
                 ", observaciones='" + observaciones + '\'' +
+                ", tratamientos=" + tratamientos +
+                ", diagnosticos=" + diagnosticos +
                 '}';
     }
 }
